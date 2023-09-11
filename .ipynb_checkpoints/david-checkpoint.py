@@ -12,7 +12,7 @@ museum.set_index('Name', inplace=True)
 museum_sim = pickle.load(open('data/museum_sim.pkl', 'rb'))
 st.title('Paris Museum Recommender')
 
-col1, col2 = st.columns([0.5,0.5])
+col1, col2 = st.columns([0.5,0.5], gap='medium')
 
 with col1:
     st.header('More like this')
@@ -21,7 +21,7 @@ with col1:
 
     museum_series = museum_sim[choice].drop(choice).sort_values(ascending=False).head(10)
     st.write('Here are similar recommendations:')
-    st.dataframe(museum_series.index)
+    st.dataframe(museum_series.index, hide_index=True, use_container_width=True)
 
 with col2:
     st.header('You may like')
