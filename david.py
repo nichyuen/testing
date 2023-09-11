@@ -21,7 +21,7 @@ with col1:
 
     museum_series = museum_sim[choice].drop(choice).sort_values(ascending=False).head(10)
     st.write('Here are similar recommendations:')
-    st.dataframe(museum_series.index, hide_index=True, use_container_width=True)
+    st.dataframe(museum_series.index, use_container_width=True)
 
 with col2:
     st.header('You may like')
